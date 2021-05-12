@@ -6,10 +6,10 @@ export class MyRoom extends Room<MyRoomState> {
 	onCreate(): void {
 		this.setState(new MyRoomState())
 
-		this.onMessage('type', (client, message) => {
-			//
-			// handle "type" message
-			//
+		this.onMessage('keydown', (client, message) => {
+			this.broadcast('keydown', message, {
+				except: client
+			})
 		})
 
 	}

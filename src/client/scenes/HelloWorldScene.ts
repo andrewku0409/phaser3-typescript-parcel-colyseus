@@ -21,5 +21,14 @@ export default class HelloWorldScene extends Phaser.Scene {
 		const room = await this.client.joinOrCreate('my_room')
 
 		console.log(room.id)
+		console.log(room.name)
+
+		this.input.keyboard.on('keydown', (evt: KeyboardEvent) => {
+			room.send("keydown", evt.key)
+		})
+
+		room.onMessage('keydown', (message) => {
+			console.log(message)
+		})
 	}
 }

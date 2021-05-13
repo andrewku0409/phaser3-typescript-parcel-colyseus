@@ -16,6 +16,9 @@ module.exports = {
 		'@typescript-eslint/member-delimiter-style': 2,
 		'@typescript-eslint/no-explicit-any': 2,
 		"quotes": "off",
-		"@typescript-eslint/quotes": ["error", "single"]
+		"@typescript-eslint/quotes": ["error", "single"],
+		"@typescript-eslint/interface-name-prefix": ["error", {
+			"prefixWithI": "always"
+		}]
 	}
 }

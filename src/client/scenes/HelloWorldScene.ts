@@ -14,7 +14,7 @@ export default class HelloWorldScene extends Phaser.Scene {
 	}
 
 	preload(): void {
-
+		console.log('preload')
 	}
 
 	async create(): Promise<void> {
@@ -24,7 +24,7 @@ export default class HelloWorldScene extends Phaser.Scene {
 		console.log(room.name)
 
 		this.input.keyboard.on('keydown', (evt: KeyboardEvent) => {
-			room.send("keydown", evt.key)
+			room.send('keydown', evt.key)
 		})
 
 		room.onMessage('keydown', (message) => {
